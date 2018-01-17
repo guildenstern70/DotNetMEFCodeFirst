@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DotNetMEFCodeFirst.Controller;
+using System;
 
 namespace DotNetMEFCodeFirst
 {
@@ -10,6 +7,15 @@ namespace DotNetMEFCodeFirst
     {
         static void Main(string[] args)
         {
+            var schoolController = new SchoolController();
+            Console.WriteLine("Creating students...");
+            schoolController.PopulateStudents();
+            Console.WriteLine("Creating courses...");
+            schoolController.PopulateCourses();
+            Console.WriteLine("Associating students-courses...");
+            schoolController.AssociateStudentsToCourses();
+            Console.WriteLine("All done.");
+            Console.ReadKey();
         }
     }
 }
